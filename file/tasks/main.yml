@@ -1,0 +1,13 @@
+
+
+- name: Create txt file
+  file:
+    dest: /tmp/file1.txt
+    state: '{{file_state}}'
+
+
+- name: write to txt file
+  copy:
+    content: 'Hello World from Ansible file2'
+    dest: /tmp/file1.txt
+    mode: '{{mode}}'

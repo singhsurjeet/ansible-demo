@@ -1,0 +1,25 @@
+---
+
+- name: copy the nginx config file and restart nginx
+  copy:
+    src: roles/nginx-update/files/static_site.cfg
+    dest: /etc/nginx/sites-available/static_site.cfg
+
+- name: create symlink
+  file:
+    src: /etc/nginx/sites-available/static_site.cfg
+    dest: /etc/nginx/sites-enabled/default
+    state: link
+
+- name: Creates directory
+  file: path=/opt/static-site state=directory
+
+- name: copy the content of the web site
+  copy:
+    src: roles/nginx-update/files/site/
+    dest: /opt/static-site
+
+- name: restart nginx
+  service:
+    name: nginx
+    state: restarted
