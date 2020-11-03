@@ -1,0 +1,25 @@
+baseURL = "https://sursingh.github.io/"
+languageCode = "en-gb"
+title = "sursingh"
+theme = "anubis"
+paginate = 3
+disqusShortname = "sursingh"
+
+[author]
+  name = "Surjeet Singh"
+
+[params]
+  author = "rchve"
+  paginationSinglePost = true
+  dateFormat = "2006-01-02"
+
+[menu]
+  [[menu.main]]
+    identifier = "archive"
+    name = "Archive"
+    url = "/posts/"
+    weight = 0
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
